@@ -1,8 +1,8 @@
 {
-  "name": "wx-basics",
-  "displayName": "wx-basics",
-  "description": "微信小程序开发基础支持",
-  "version": "2.0.0",
+  "name": "sparrow",
+  "displayName": "麻雀",
+  "description": "别名路径跳转支持、微信小程序开发基础支持",
+  "version": "3.0.0",
   "publisher": "ftzahao",
   "engines": {
     "vscode": "^1.40.0"
@@ -151,7 +151,36 @@
           "meta.tag string.quoted": "other"
         }
       }
-    ]
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Sparrow Alias-Skip 配置",
+      "properties": {
+        "sparrow.alias-skip.mappings": {
+          "type": "object",
+          "default": {
+            "@": "/src",
+            "~": "/src"
+          },
+          "description": "路径映射，例如{'@':'/src','components':'/src/components'}，/表示项目根目录"
+        },
+        "sparrow.alias-skip.rootpath": {
+          "type": "string",
+          "default": "package.json",
+          "description": "判断项目根目录的依据，默认为package.json，即存在该文件的目录为项目根目录"
+        },
+        "sparrow.alias-skip.allowedsuffix": {
+          "type": "array",
+          "default": [
+            "js",
+            "vue",
+            "jsx",
+            "ts"
+          ],
+          "description": "可缺省后缀名的文件列表"
+        }
+      }
+    }
   },
   "activationEvents": [
     "onLanguage:javascript"
