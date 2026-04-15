@@ -7,7 +7,7 @@
   "engines": {
     "vscode": "^1.40.0"
   },
-  "repository": "https://github.com/ftzahao/wx-basics",
+  "repository": "https://github.com/ftzahao/sparrow",
   "scripts": {
     "build": "vsce package"
   },
