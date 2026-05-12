@@ -42,8 +42,10 @@
       "prettier.documentSelectors": [
         "**/*.{wxml}",
         "**/*.{wxss}",
+        "**/*.{wxs}",
         "**/*.{axml}",
-        "**/*.{acss}"
+        "**/*.{acss}",
+        "**/*.{sjs}"
       ],
       "css.lint.unknownAtRules": "ignore",
       "less.lint.unknownAtRules": "ignore",
