@@ -258,6 +258,7 @@
     "workspaceContains:**/mini.project.json",
     "workspaceContains:**/plugin.json"
   ],
+  "icon": "icon.png",
   "engines": {
     "vscode": "^1.40.0"
   }
