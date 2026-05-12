@@ -92,7 +92,11 @@ bun run build
 1. 按语言指定默认格式化器
 
 - `[wxml].editor.defaultFormatter`: `esbenp.prettier-vscode`
+- `[wxss].editor.defaultFormatter`: `esbenp.prettier-vscode`
+- `[wxs].editor.defaultFormatter`: `esbenp.prettier-vscode`
 - `[axml].editor.defaultFormatter`: `esbenp.prettier-vscode`
+- `[acss].editor.defaultFormatter`: `esbenp.prettier-vscode`
+- `[sjs].editor.defaultFormatter`: `esbenp.prettier-vscode`
 
 2. AXML 编辑体验优化
 
@@ -106,8 +110,10 @@ bun run build
 - `prettier.documentSelectors` 默认包含：
   - `**/*.{wxml}`
   - `**/*.{wxss}`
+  - `**/*.{wxs}`
   - `**/*.{axml}`
   - `**/*.{acss}`
+  - `**/*.{sjs}`
 
 4. 样式语法检查兼容
 
