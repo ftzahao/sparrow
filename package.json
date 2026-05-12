@@ -18,6 +18,12 @@
       "[wxml]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
       },
+      "[wxss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      },
+      "[wxs]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      },
       "[axml]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.semanticHighlighting.enabled": false,
@@ -26,6 +32,12 @@
           "strings": true,
           "comments": false
         }
+      },
+      "[acss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      },
+      "[sjs]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
       },
       "prettier.documentSelectors": [
         "**/*.{wxml}",

@@ -117,6 +117,45 @@ bun run build
 
 说明：以上为扩展提供的默认值。如果你在用户设置或工作区设置中显式配置了同名项，将以你的手动配置为准。
 
+## Prettier 配置建议
+
+在项目根目录创建 `.prettierrc`，推荐配置如下：
+
+```json
+{
+  "$schema": "https://json.schemastore.org/prettierrc",
+  "semi": false,
+  "singleQuote": true,
+  "printWidth": 200,
+  "overrides": [
+    {
+      "files": ["*.axml", "*.wxml"],
+      "options": {
+        "parser": "html"
+      }
+    },
+    {
+      "files": ["*.acss", "*.wxss"],
+      "options": {
+        "parser": "css"
+      }
+    },
+    {
+      "files": ["*.sjs", "*.wxs"],
+      "options": {
+        "trailingComma": "none"
+      }
+    }
+  ]
+}
+```
+
+说明：
+
+- `*.axml`、`*.wxml` 使用 `html` parser，使 Prettier 能正确格式化支付宝小程序模板文件
+- `*.acss`、`*.wxss` 使用 `css` parser，使 Prettier 能正确格式化支付宝小程序样式文件
+- `*.sjs`、`*.wxs` 禁用尾逗号，兼容支付宝/微信小程序 SJS、WXS 语法规范
+
 ## 快速示例
 
 示例配置：
