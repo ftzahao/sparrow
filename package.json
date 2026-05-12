@@ -1,7 +1,7 @@
 {
   "name": "sparrow",
   "displayName": "麻雀",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "麻雀虽小，五脏俱全",
   "categories": [
     "Programming Languages",
@@ -258,6 +258,7 @@
     "workspaceContains:**/mini.project.json",
     "workspaceContains:**/plugin.json"
   ],
+  "icon": "icon.png",
   "engines": {
     "vscode": "^1.40.0"
   }
