@@ -1,33 +1,54 @@
 {
   "name": "sparrow",
   "displayName": "麻雀",
-  "description": "别名路径跳转支持、微信小程序开发基础支持",
-  "version": "3.0.0",
-  "publisher": "ftzahao",
-  "engines": {
-    "vscode": "^1.40.0"
-  },
+  "version": "4.0.0",
+  "description": "麻雀虽小，五脏俱全",
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
   "repository": "https://github.com/ftzahao/sparrow",
+  "publisher": "ftzahao",
+  "main": "main.js",
   "scripts": {
     "build": "vsce package"
   },
-  "categories": [
-    "Snippets",
-    "Programming Languages"
-  ],
   "contributes": {
+    "configurationDefaults": {
+      "[wxml]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      },
+      "[axml]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.semanticHighlighting.enabled": false,
+        "editor.quickSuggestions": {
+          "other": true,
+          "strings": true,
+          "comments": false
+        }
+      },
+      "prettier.documentSelectors": [
+        "**/*.{wxml}",
+        "**/*.{wxss}",
+        "**/*.{axml}",
+        "**/*.{acss}"
+      ],
+      "css.lint.unknownAtRules": "ignore",
+      "less.lint.unknownAtRules": "ignore",
+      "scss.lint.unknownAtRules": "ignore"
+    },
     "snippets": [
       {
         "language": "javascript",
-        "path": "./snippets/snippets.js.json"
+        "path": "./snippets/wx.snippets.js.json"
       },
       {
         "language": "typescript",
-        "path": "./snippets/snippets.ts.json"
+        "path": "./snippets/wx.snippets.ts.json"
       },
       {
         "language": "json",
-        "path": "./snippets/snippets.json.json"
+        "path": "./snippets/wx.snippets.json.json"
       }
     ],
     "jsonValidation": [
@@ -125,6 +146,34 @@
         "extensions": [
           ".wxss"
         ]
+      },
+      {
+        "id": "css",
+        "aliases": [
+          "ACSS"
+        ],
+        "extensions": [
+          ".acss"
+        ]
+      },
+      {
+        "id": "axml",
+        "aliases": [
+          "AXML"
+        ],
+        "extensions": [
+          ".axml"
+        ],
+        "mimetypes": [
+          "text/axml"
+        ],
+        "configuration": "./syntaxes/axml-language-configuration.json"
+      },
+      {
+        "id": "javascript",
+        "extensions": [
+          ".sjs"
+        ]
       }
     ],
     "grammars": [
@@ -150,6 +199,22 @@
         "tokenTypes": {
           "meta.tag string.quoted": "other"
         }
+      },
+      {
+        "language": "axml",
+        "scopeName": "source.axml",
+        "path": "./syntaxes/axml.tmLanguage.json",
+        "embeddedLanguages": {
+          "source.js": "javascript",
+          "source.ts": "typescript"
+        }
+      },
+      {
+        "path": "./syntaxes/acss.tmLanguage.injection.json",
+        "scopeName": "acss-rpx.injection",
+        "injectTo": [
+          "source.css"
+        ]
       }
     ],
     "configuration": {
@@ -183,7 +248,17 @@
     }
   },
   "activationEvents": [
-    "onLanguage:javascript"
+    "onLanguage:javascript",
+    "workspaceContains:**/*.acss",
+    "workspaceContains:**/*.axml",
+    "workspaceContains:**/*.sjs",
+    "workspaceContains:**/app.js",
+    "workspaceContains:**/app.json",
+    "workspaceContains:**/ext.json",
+    "workspaceContains:**/mini.project.json",
+    "workspaceContains:**/plugin.json"
   ],
-  "main": "main.js"
+  "engines": {
+    "vscode": "^1.40.0"
+  }
 }
