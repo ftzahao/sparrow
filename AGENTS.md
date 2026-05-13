@@ -5,10 +5,10 @@
 ## 项目类型
 
 VS Code 扩展，提供以下功能：
-1. 别名路径跳转（`@/`、`~/` → 文件跳转）
-2. 微信小程序支持（WXML/WXSS/WXS）
-3. 支付宝小程序支持（AXML/ACSS/SJS）
-4. 小程序文件的编辑器默认配置和 Prettier 集成
+
+1. 微信小程序支持（WXML/WXSS/WXS）
+2. 支付宝小程序支持（AXML/ACSS/SJS）
+3. 小程序文件的编辑器默认配置和 Prettier 集成
 
 ## 构建和打包
 
@@ -20,28 +20,12 @@ bun run build
 
 ## 项目结构
 
-- `src/extension.ts` — 主入口，注册路径跳转的 definition provider
-- `src/utils.ts` — 路径解析逻辑
 - `main.js` — 编译后的扩展入口（package.json `main` 字段引用）
 - `package.json` — 扩展清单，包含所有功能配置
 - `syntaxes/` — WXML/AXML/ACSS 的 TextMate 语法文件
 - `snippets/` — 微信小程序代码片段
 
 ## 关键细节
-
-### 路径跳转逻辑 (src/extension.ts:5-47)
-
-- 为 Vue、JS、TS、CSS、SCSS、Less 注册 `DefinitionProvider`
-- 使用 `sparrow.alias-skip.mappings` 配置解析别名路径（如 `@/components`）
-- 支持相对路径解析（如 `../utils`）
-- 通过 `sparrow.alias-skip.rootpath` 查找项目根目录（默认：`package.json`）
-- 如果文件存在，自动补全 `sparrow.alias-skip.allowedsuffix` 中的扩展名
-
-### 扩展配置项 (package.json:344-369)
-
-- `sparrow.alias-skip.mappings`: `{"@": "/src", "~": "/src"}` — 路径别名映射
-- `sparrow.alias-skip.rootpath`: `"package.json"` — 用于标识根目录的文件
-- `sparrow.alias-skip.allowedsuffix`: `["js", "vue", "jsx", "ts"]` — 可尝试补全的扩展名
 
 ### 语言映射
 
@@ -57,20 +41,21 @@ bun run build
 扩展设置了 `prettier.documentSelectors` 以识别小程序文件。
 
 **建议用户在项目中配置 `.prettierrc`：**
+
 ```json
 {
   "overrides": [
     {
       "files": ["*.axml", "*.wxml"],
-      "options": {"parser": "html"}
+      "options": { "parser": "html" }
     },
     {
       "files": ["*.acss", "*.wxss"],
-      "options": {"parser": "css"}
+      "options": { "parser": "css" }
     },
     {
       "files": ["*.sjs", "*.wxs"],
-      "options": {"trailingComma": "none"}
+      "options": { "trailingComma": "none" }
     }
   ]
 }

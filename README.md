@@ -2,9 +2,7 @@
 
 **轻量、高效的 VS Code 扩展**
 
-麻雀虽小，五脏俱全。为开发者提供三大核心能力：
-
-🔗 **智能路径跳转** — 支持别名路径、相对路径直达，CMD/Ctrl 一键跳转到目标文件
+麻雀虽小，五脏俱全。为开发者提供两大核心能力：
 
 📱 **小程序开发支持** — 补齐微信、支付宝小程序的语法高亮、代码片段和编辑体验
 
@@ -14,33 +12,18 @@
 
 ### 适用场景
 
-👥 **业务项目开发者**  
-你的项目充斥着 `@/`、`~/` 等路径别名，需要一个快速便捷的跳转工具
-
 📱 **小程序开发者**  
 在 VS Code 中开发微信或支付宝小程序，需要完整的语法支持和开发体验优化
 
 ### 核心能力
 
-1. **别名路径跳转** — 智能识别并跳转到 JS/TS/Vue/CSS 等文件中的路径别名
-2. **微信小程序支持** — WXML 语法、WXSS 样式、WXS 脚本、JSON Schema 校验和代码片段
-3. **支付宝小程序支持** — AXML 语法、ACSS 样式、SJS 脚本全套支持
-4. **编辑器体验优化** — 智能格式化、主题配色、快捷建议等默认配置，开箱即用
+1. **微信小程序支持** — WXML 语法、WXSS 样式、WXS 脚本、JSON Schema 校验和代码片段
+2. **支付宝小程序支持** — AXML 语法、ACSS 样式、SJS 脚本全套支持
+3. **编辑器体验优化** — 智能格式化、主题配色、快捷建议等默认配置，开箱即用
 
 ## 功能清单
 
-### 1. 别名路径跳转
-
-- 在 JS / TS / Vue / CSS / SCSS / Less 等文件中识别路径
-- 支持配置路径别名映射
-- 支持相对路径跳转
-
-使用方式：
-
-- macOS：按住 Cmd 并单击路径
-- Windows / Linux：按住 Ctrl 并单击路径
-
-### 2. 微信小程序基础支持
+### 1. 微信小程序基础支持
 
 - [x] wx-json（常见配置文件 JSON Schema 校验）
 - [x] wx-snippets（JS / TS / JSON 片段）
@@ -49,7 +32,7 @@
 - [x] wxss（.wxss 语言映射）
 - [ ] wxml-language-features
 
-### 3. 支付宝小程序基础支持
+### 2. 支付宝小程序基础支持
 
 - [x] axml（.axml 语言与语法支持）
 - [x] acss（.acss 语言与语法支持）
@@ -74,29 +57,9 @@ bun run build
 
 ## 配置说明
 
-本扩展提供以下配置项（设置中搜索 sparrow.alias-skip）：
-
-1. `sparrow.alias-skip.mappings`
-
-- 类型：对象
-- 默认值：`{"@": "/src", "~": "/src"}`
-- 说明：路径别名映射，`/` 表示项目根目录
-
-2. `sparrow.alias-skip.rootpath`
-
-- 类型：字符串
-- 默认值：`package.json`
-- 说明：用于判断项目根目录的依据（存在该文件的目录视为项目根目录）
-
-3. `sparrow.alias-skip.allowedsuffix`
-
-- 类型：数组
-- 默认值：`["js", "vue", "jsx", "ts"]`
-- 说明：可省略后缀名时允许尝试补全的后缀列表
-
 ### 编辑器默认配置（configurationDefaults）
 
-除上面的扩展配置外，麻雀还会提供一组编辑器默认项，主要用于提升小程序文件在 VS Code 中的编辑体验。
+麻雀提供一组编辑器默认项，主要用于提升小程序文件在 VS Code 中的编辑体验。
 
 #### 1. 按语言指定默认格式化器
 
@@ -233,33 +196,9 @@ bun run build
 - `*.acss`、`*.wxss` 使用 `css` parser，使 Prettier 能正确格式化支付宝小程序样式文件
 - `*.sjs`、`*.wxs` 禁用尾逗号，兼容支付宝/微信小程序 SJS、WXS 语法规范
 
-## 快速示例
-
-示例配置：
-
-```json
-{
-  "sparrow.alias-skip.mappings": {
-    "@": "/src",
-    "components": "/src/components"
-  },
-  "sparrow.alias-skip.rootpath": "package.json",
-  "sparrow.alias-skip.allowedsuffix": ["js", "ts", "vue"]
-}
-```
-
-示例导入：
-
-```ts
-import Button from "@/components/Button";
-import util from "../utils/index";
-```
-
-在路径字符串上按住 Cmd/Ctrl 并单击，即可跳转到对应文件。
-
 ## 开发说明
 
-- 入口文件：`src/extension.ts`
+- 入口文件：`main.js`
 - 构建命令：`bun run build`（内部执行 `vsce package`）
 - 打包产物：项目根目录下的 `.vsix`
 

@@ -12,13 +12,7 @@
   "type": "module",
   "main": "main.js",
   "scripts": {
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "build": "bun run compile && vsce package --skip-license"
-  },
-  "devDependencies": {
-    "@types/node": "^25.7.0",
-    "@types/vscode": "^1.118.0"
+    "build": "vsce package --skip-license"
   },
   "contributes": {
     "configurationDefaults": {
@@ -344,36 +338,7 @@
           "source.css"
         ]
       }
-    ],
-    "configuration": {
-      "type": "object",
-      "title": "Sparrow Alias-Skip 配置",
-      "properties": {
-        "sparrow.alias-skip.mappings": {
-          "type": "object",
-          "default": {
-            "@": "/src",
-            "~": "/src"
-          },
-          "description": "路径映射，例如{'@':'/src','components':'/src/components'}，/表示项目根目录"
-        },
-        "sparrow.alias-skip.rootpath": {
-          "type": "string",
-          "default": "package.json",
-          "description": "判断项目根目录的依据，默认为package.json，即存在该文件的目录为项目根目录"
-        },
-        "sparrow.alias-skip.allowedsuffix": {
-          "type": "array",
-          "default": [
-            "js",
-            "vue",
-            "jsx",
-            "ts"
-          ],
-          "description": "可缺省后缀名的文件列表"
-        }
-      }
-    }
+    ]
   },
   "activationEvents": [
     "onLanguage:javascript",
