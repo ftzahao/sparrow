@@ -100,6 +100,8 @@ bun run build
 
 #### 1. 按语言指定默认格式化器
 
+- `[rust].editor.defaultFormatter`: `rust-lang.rust-analyzer`
+- `[toml].editor.defaultFormatter`: `tombi-toml.tombi`
 - `[wxml].editor.defaultFormatter`: `esbenp.prettier-vscode`
 - `[wxss].editor.defaultFormatter`: `esbenp.prettier-vscode`
 - `[wxs].editor.defaultFormatter`: `esbenp.prettier-vscode`
@@ -114,15 +116,14 @@ bun run build
 - `[axml].editor.quickSuggestions.strings`: `true`
 - `[axml].editor.quickSuggestions.comments`: `false`
 
-#### 3. Prettier 识别的小程序文档类型
+#### 3. Prettier 配置
 
-- `prettier.documentSelectors` 默认包含：
-  - `**/*.{wxml}`
-  - `**/*.{wxss}`
-  - `**/*.{wxs}`
-  - `**/*.{axml}`
-  - `**/*.{acss}`
-  - `**/*.{sjs}`
+- `prettier.documentSelectors`：识别小程序文件
+  - `**/*.{wxml}`、`**/*.{wxss}`、`**/*.{wxs}`：微信小程序
+  - `**/*.{axml}`、`**/*.{acss}`、`**/*.{sjs}`：支付宝小程序
+- `prettier.printWidth`: `100`
+- `prettier.semi`: `false`
+- `prettier.trailingComma`: `none`
 
 #### 4. 样式语法检查兼容
 
@@ -130,7 +131,11 @@ bun run build
 - `less.lint.unknownAtRules`: `ignore`
 - `scss.lint.unknownAtRules`: `ignore`
 
-#### 5. 编辑器通用编辑体验优化
+#### 5. OXC 格式化器配置
+
+- `oxc.fmt.configPath`: `.oxfmtrc.json`
+
+#### 6. 编辑器通用编辑体验优化
 
 - `editor.defaultFormatter`: `esbenp.prettier-vscode`（全局默认格式化器）
 - `editor.fontLigatures`: `true`（启用字体连字）
@@ -148,12 +153,12 @@ bun run build
   - 语言变量：`variable.language.this`
   - 标记：`markup.italic`
 
-#### 6. 文件和资源配置
+#### 7. 文件和资源配置
 
 - `explorer.fileNesting.enabled`: `true`（启用文件嵌套显示）
 - `files.readonlyInclude`：将 Cargo 和 Rust 库文件标记为只读
 
-#### 7. Git 相关配置
+#### 8. Git 相关配置
 
 - `git.allowForcePush`: `true`（允许强制推送）
 - `git.autofetch`: `true`（启用自动获取）
@@ -161,21 +166,29 @@ bun run build
 - `git.pruneOnFetch`: `true`（获取时清理远程追踪分支）
 - `git.rebaseWhenSync`: `true`（同步时使用变基）
 
-#### 8. GitLens 配置
+#### 9. GitLens 配置
 
-- 默认关闭大多数 GitLens 功能（AI 功能、注解、Heat Map 等）以减少编辑器负担
-- 保留基础 Blame 功能的部分支持
+大多数 GitLens 功能默认关闭，保持编辑器轻量。具体包括：
 
-#### 9. 国际化配置（i18n-ally）
+- AI 功能关闭：`gitlens.ai.enabled`、`gitlens.cloudIntegrations.enabled` 等
+- 注解功能关闭：`gitlens.blame.heatmap.enabled`、`gitlens.blame.highlight.enabled`、`gitlens.codeLens.enabled` 等
+- 侧边栏和图表功能关闭：`gitlens.graph.sidebar.enabled`、`gitlens.launchpad.indicator.enabled` 等
+- 保留基础功能：`gitlens.ai.model`、`gitlens.ai.vscode.model` 配置用于 AI 功能重新启用时使用
 
-- `i18n-ally.disabled`: `true`（禁用）
-- 其他相关配置用于支持 JSON 格式的本地化文件
+#### 10. 国际化配置（i18n-ally）
 
-#### 10. 终端配置
+- `i18n-ally.disabled`: `true`（默认禁用）
+- `i18n-ally.editor.preferEditor`: `true`
+- `i18n-ally.enabledParsers`: `["json"]`
+- `i18n-ally.extract.autoDetect`: `true`
+- `i18n-ally.keystyle`: `flat`
+- `i18n-ally.namespace`: `true`
+
+#### 11. 终端配置
 
 - `terminal.integrated.fontLigatures.enabled`: `true`（启用终端字体连字）
 
-#### 11. 窗口配置
+#### 12. 窗口配置
 
 - `window.autoDetectColorScheme`: `true`（自动检测系统配色方案）
 

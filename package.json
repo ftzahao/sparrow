@@ -15,6 +15,12 @@
   },
   "contributes": {
     "configurationDefaults": {
+      "[rust]": {
+        "editor.defaultFormatter": "rust-lang.rust-analyzer"
+      },
+      "[toml]": {
+        "editor.defaultFormatter": "tombi-toml.tombi"
+      },
       "[wxml]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
       },
@@ -47,9 +53,13 @@
         "**/*.{acss}",
         "**/*.{sjs}"
       ],
+      "prettier.printWidth": 100,
+      "prettier.semi": false,
+      "prettier.trailingComma": "none",
       "css.lint.unknownAtRules": "ignore",
       "less.lint.unknownAtRules": "ignore",
       "scss.lint.unknownAtRules": "ignore",
+      "oxc.fmt.configPath": ".oxfmtrc.json",
       "editor.defaultFormatter": "esbenp.prettier-vscode",
       "editor.fontLigatures": true,
       "editor.formatOnPaste": true,
