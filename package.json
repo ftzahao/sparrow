@@ -1,7 +1,7 @@
 {
   "name": "sparrow",
   "displayName": "麻雀",
-  "version": "7.0.0",
+  "version": "7.5.0",
   "description": "麻雀虽小，五脏俱全",
   "categories": [
     "Programming Languages",
@@ -9,9 +9,16 @@
   ],
   "repository": "https://github.com/ftzahao/sparrow",
   "publisher": "ftzahao",
+  "type": "module",
   "main": "main.js",
   "scripts": {
-    "build": "vsce package"
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "build": "bun run compile && vsce package --skip-license"
+  },
+  "devDependencies": {
+    "@types/node": "^25.7.0",
+    "@types/vscode": "^1.118.0"
   },
   "contributes": {
     "configurationDefaults": {
@@ -379,8 +386,8 @@
     "workspaceContains:**/mini.project.json",
     "workspaceContains:**/plugin.json"
   ],
-  "icon": "icon.png",
+  "icon": "./icons/icon.png",
   "engines": {
-    "vscode": "^1.40.0"
+    "vscode": "^1.118.0"
   }
 }

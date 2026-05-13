@@ -1,0 +1,13 @@
+{
+  "include": ["./src/**/*.ts"],
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "outDir": "./lib",
+    "rootDir": "./src",
+    "strict": true,
+    "strictNullChecks": false,
+    "esModuleInterop": true,
+    "types": ["node", "vscode"]
+  }
+}
