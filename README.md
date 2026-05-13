@@ -89,7 +89,7 @@ bun run build
 
 除上面的扩展配置外，麻雀还会提供一组编辑器默认项，主要用于提升小程序文件在 VS Code 中的编辑体验。
 
-1. 按语言指定默认格式化器
+#### 1. 按语言指定默认格式化器
 
 - `[wxml].editor.defaultFormatter`: `esbenp.prettier-vscode`
 - `[wxss].editor.defaultFormatter`: `esbenp.prettier-vscode`
@@ -98,14 +98,14 @@ bun run build
 - `[acss].editor.defaultFormatter`: `esbenp.prettier-vscode`
 - `[sjs].editor.defaultFormatter`: `esbenp.prettier-vscode`
 
-2. AXML 编辑体验优化
+#### 2. AXML 编辑体验优化
 
 - `[axml].editor.semanticHighlighting.enabled`: `false`
 - `[axml].editor.quickSuggestions.other`: `true`
 - `[axml].editor.quickSuggestions.strings`: `true`
 - `[axml].editor.quickSuggestions.comments`: `false`
 
-3. Prettier 识别的小程序文档类型
+#### 3. Prettier 识别的小程序文档类型
 
 - `prettier.documentSelectors` 默认包含：
   - `**/*.{wxml}`
@@ -115,13 +115,62 @@ bun run build
   - `**/*.{acss}`
   - `**/*.{sjs}`
 
-4. 样式语法检查兼容
+#### 4. 样式语法检查兼容
 
 - `css.lint.unknownAtRules`: `ignore`
 - `less.lint.unknownAtRules`: `ignore`
 - `scss.lint.unknownAtRules`: `ignore`
 
-说明：以上为扩展提供的默认值。如果你在用户设置或工作区设置中显式配置了同名项，将以你的手动配置为准。
+#### 5. 编辑器通用编辑体验优化
+
+- `editor.defaultFormatter`: `esbenp.prettier-vscode`（全局默认格式化器）
+- `editor.fontLigatures`: `true`（启用字体连字）
+- `editor.formatOnPaste`: `true`（粘贴时自动格式化）
+- `editor.formatOnSave`: `true`（保存时自动格式化）
+- `editor.linkedEditing`: `true`（启用关联编辑）
+- `editor.semanticTokenColorCustomizations`：针对以下内容启用斜体
+  - `*.static`、`interface`、`keyword`、`selfParameter`
+- `editor.tokenColorCustomizations`：通过 TextMate 规则为以下项启用斜体
+  - 布尔常量：`constant.language.boolean`
+  - 未定义/空值：`constant.language.undefined`、`constant.language.null`、`constant.language.nullptr`
+  - 类型操作符：`meta.type keyword.operator.expression.typeof`、`meta.type keyword.operator.expression.keyof`
+  - 关键字：`keyword.control`、`keyword.function`、`keyword.operator.new`、`keyword.operator.borrow.and.rust`
+  - 存储类型：`storage.type`、`storage.modifier`
+  - 语言变量：`variable.language.this`
+  - 标记：`markup.italic`
+
+#### 6. 文件和资源配置
+
+- `explorer.fileNesting.enabled`: `true`（启用文件嵌套显示）
+- `files.readonlyInclude`：将 Cargo 和 Rust 库文件标记为只读
+
+#### 7. Git 相关配置
+
+- `git.allowForcePush`: `true`（允许强制推送）
+- `git.autofetch`: `true`（启用自动获取）
+- `git.blame.editorDecoration.enabled`: `true`（显示 Git Blame）
+- `git.pruneOnFetch`: `true`（获取时清理远程追踪分支）
+- `git.rebaseWhenSync`: `true`（同步时使用变基）
+
+#### 8. GitLens 配置
+
+- 默认关闭大多数 GitLens 功能（AI 功能、注解、Heat Map 等）以减少编辑器负担
+- 保留基础 Blame 功能的部分支持
+
+#### 9. 国际化配置（i18n-ally）
+
+- `i18n-ally.disabled`: `true`（禁用）
+- 其他相关配置用于支持 JSON 格式的本地化文件
+
+#### 10. 终端配置
+
+- `terminal.integrated.fontLigatures.enabled`: `true`（启用终端字体连字）
+
+#### 11. 窗口配置
+
+- `window.autoDetectColorScheme`: `true`（自动检测系统配色方案）
+
+**说明：** 以上为扩展提供的默认值。如果你在用户设置或工作区设置中显式配置了同名项，将以你的手动配置为准。
 
 ## Prettier 配置建议
 
