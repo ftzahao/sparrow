@@ -94,42 +94,11 @@ bun run build
 - `less.lint.unknownAtRules`: `ignore`
 - `scss.lint.unknownAtRules`: `ignore`
 
-#### 5. OXC 格式化器配置
+#### 5. 文件和资源配置
 
-- `oxc.fmt.configPath`: `.oxfmtrc.json`
-
-#### 6. 编辑器通用编辑体验优化
-
-- `editor.defaultFormatter`: `esbenp.prettier-vscode`（全局默认格式化器）
-- `editor.fontLigatures`: `true`（启用字体连字）
-- `editor.formatOnPaste`: `true`（粘贴时自动格式化）
-- `editor.formatOnSave`: `true`（保存时自动格式化）
-- `editor.linkedEditing`: `true`（启用关联编辑）
-- `editor.semanticTokenColorCustomizations`：针对以下内容启用斜体
-  - `*.static`、`interface`、`keyword`、`selfParameter`
-- `editor.tokenColorCustomizations`：通过 TextMate 规则为以下项启用斜体
-  - 布尔常量：`constant.language.boolean`
-  - 未定义/空值：`constant.language.undefined`、`constant.language.null`、`constant.language.nullptr`
-  - 类型操作符：`meta.type keyword.operator.expression.typeof`、`meta.type keyword.operator.expression.keyof`
-  - 关键字：`keyword.control`、`keyword.function`、`keyword.operator.new`、`keyword.operator.borrow.and.rust`
-  - 存储类型：`storage.type`、`storage.modifier`
-  - 语言变量：`variable.language.this`
-  - 标记：`markup.italic`
-
-#### 7. 文件和资源配置
-
-- `explorer.fileNesting.enabled`: `true`（启用文件嵌套显示）
 - `files.readonlyInclude`：将 Cargo 和 Rust 库文件标记为只读
 
-#### 8. Git 相关配置
-
-- `git.allowForcePush`: `true`（允许强制推送）
-- `git.autofetch`: `true`（启用自动获取）
-- `git.blame.editorDecoration.enabled`: `true`（显示 Git Blame）
-- `git.pruneOnFetch`: `true`（获取时清理远程追踪分支）
-- `git.rebaseWhenSync`: `true`（同步时使用变基）
-
-#### 9. GitLens 配置
+#### 6. GitLens 配置
 
 大多数 GitLens 功能默认关闭，保持编辑器轻量。具体包括：
 
@@ -138,7 +107,7 @@ bun run build
 - 侧边栏和图表功能关闭：`gitlens.graph.sidebar.enabled`、`gitlens.launchpad.indicator.enabled` 等
 - 保留基础功能：`gitlens.ai.model`、`gitlens.ai.vscode.model` 配置用于 AI 功能重新启用时使用
 
-#### 10. 国际化配置（i18n-ally）
+#### 7. 国际化配置（i18n-ally）
 
 - `i18n-ally.disabled`: `true`（默认禁用）
 - `i18n-ally.editor.preferEditor`: `true`
@@ -147,11 +116,7 @@ bun run build
 - `i18n-ally.keystyle`: `flat`
 - `i18n-ally.namespace`: `true`
 
-#### 11. 终端配置
-
-- `terminal.integrated.fontLigatures.enabled`: `true`（启用终端字体连字）
-
-#### 12. 窗口配置
+#### 8. 窗口配置
 
 - `window.autoDetectColorScheme`: `true`（自动检测系统配色方案）
 

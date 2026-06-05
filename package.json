@@ -1,7 +1,7 @@
 {
   "name": "sparrow",
   "displayName": "麻雀",
-  "version": "9.0.0",
+  "version": "10.0.0",
   "description": "麻雀虽小，五脏俱全",
   "categories": [
     "Programming Languages",
@@ -60,67 +60,12 @@
       "css.lint.unknownAtRules": "ignore",
       "less.lint.unknownAtRules": "ignore",
       "scss.lint.unknownAtRules": "ignore",
-      "oxc.fmt.configPath": ".oxfmtrc.json",
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
-      "editor.fontLigatures": true,
-      "editor.formatOnPaste": true,
-      "editor.formatOnSave": true,
-      "editor.linkedEditing": true,
-      "editor.semanticTokenColorCustomizations": {
-        "rules": {
-          "*.static": {
-            "italic": true
-          },
-          "interface": {
-            "italic": true
-          },
-          "keyword": {
-            "italic": true
-          },
-          "selfParameter": {
-            "italic": true
-          }
-        }
-      },
-      "editor.tokenColorCustomizations": {
-        "textMateRules": [
-          {
-            "scope": [
-              "constant.language.boolean",
-              "constant.language.undefined",
-              "constant.language.null",
-              "constant.language.nullptr",
-              "meta.type keyword.operator.expression.typeof",
-              "meta.type keyword.operator.expression.keyof",
-              "keyword.control",
-              "keyword.function",
-              "keyword.operator.new",
-              "keyword.operator.borrow.and.rust",
-              "storage.type",
-              "storage.modifier",
-              "variable.language.this",
-              "markup.italic"
-            ],
-            "settings": {
-              "fontStyle": "italic"
-            }
-          }
-        ]
-      },
-      "explorer.fileNesting.enabled": true,
       "files.readonlyInclude": {
         "**/.cargo/git/checkouts/**/*.rs": true,
         "**/.cargo/registry/src/**/*.rs": true,
         "**/lib/rustlib/src/rust/library/**/*.rs": true
       },
-      "git.allowForcePush": true,
-      "git.autofetch": true,
-      "git.blame.editorDecoration.enabled": true,
-      "git.pruneOnFetch": true,
-      "git.rebaseWhenSync": true,
       "gitlens.ai.enabled": false,
-      "gitlens.ai.model": "vscode",
-      "gitlens.ai.vscode.model": "copilot:gpt-5-mini",
       "gitlens.blame.heatmap.enabled": false,
       "gitlens.blame.highlight.enabled": false,
       "gitlens.cloudIntegrations.enabled": false,
@@ -156,7 +101,6 @@
       "i18n-ally.extract.autoDetect": true,
       "i18n-ally.keystyle": "flat",
       "i18n-ally.namespace": true,
-      "terminal.integrated.fontLigatures.enabled": true,
       "window.autoDetectColorScheme": true
     },
     "snippets": [
