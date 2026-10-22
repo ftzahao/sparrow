@@ -1,7 +1,7 @@
 {
   "name": "sparrow",
   "displayName": "麻雀",
-  "version": "10.0.0",
+  "version": "11.0.0",
   "description": "麻雀虽小，五脏俱全",
   "categories": [
     "Programming Languages",
@@ -64,44 +64,7 @@
         "**/.cargo/git/checkouts/**/*.rs": true,
         "**/.cargo/registry/src/**/*.rs": true,
         "**/lib/rustlib/src/rust/library/**/*.rs": true
-      },
-      "gitlens.ai.enabled": false,
-      "gitlens.blame.heatmap.enabled": false,
-      "gitlens.blame.highlight.enabled": false,
-      "gitlens.cloudIntegrations.enabled": false,
-      "gitlens.cloudPatches.enabled": false,
-      "gitlens.codeLens.authors.enabled": false,
-      "gitlens.codeLens.enabled": false,
-      "gitlens.codeLens.recentChange.enabled": false,
-      "gitlens.currentLine.enabled": false,
-      "gitlens.currentLine.pullRequests.enabled": false,
-      "gitlens.graph.issues.enabled": false,
-      "gitlens.graph.minimap.enabled": false,
-      "gitlens.graph.pullRequests.enabled": false,
-      "gitlens.graph.scrollMarkers.enabled": false,
-      "gitlens.graph.sidebar.enabled": false,
-      "gitlens.graph.statusBar.enabled": false,
-      "gitlens.hovers.annotations.enabled": false,
-      "gitlens.hovers.currentLine.enabled": false,
-      "gitlens.hovers.enabled": false,
-      "gitlens.hovers.pullRequests.enabled": false,
-      "gitlens.launchpad.indicator.enabled": false,
-      "gitlens.launchpad.indicator.polling.enabled": false,
-      "gitlens.liveshare.enabled": false,
-      "gitlens.menus": false,
-      "gitlens.mode.statusBar.enabled": false,
-      "gitlens.plusFeatures.enabled": false,
-      "gitlens.statusBar.enabled": false,
-      "gitlens.statusBar.pullRequests.enabled": false,
-      "i18n-ally.disabled": true,
-      "i18n-ally.editor.preferEditor": true,
-      "i18n-ally.enabledParsers": [
-        "json"
-      ],
-      "i18n-ally.extract.autoDetect": true,
-      "i18n-ally.keystyle": "flat",
-      "i18n-ally.namespace": true,
-      "window.autoDetectColorScheme": true
+      }
     },
     "snippets": [
       {

@@ -12,7 +12,7 @@
 
 ### 适用场景
 
-📱 **小程序开发者**  
+📱 **小程序开发者**
 在 VS Code 中开发微信或支付宝小程序，需要完整的语法支持和开发体验优化
 
 ### 核心能力
@@ -97,28 +97,6 @@ bun run build
 #### 5. 文件和资源配置
 
 - `files.readonlyInclude`：将 Cargo 和 Rust 库文件标记为只读
-
-#### 6. GitLens 配置
-
-大多数 GitLens 功能默认关闭，保持编辑器轻量。具体包括：
-
-- AI 功能关闭：`gitlens.ai.enabled`、`gitlens.cloudIntegrations.enabled` 等
-- 注解功能关闭：`gitlens.blame.heatmap.enabled`、`gitlens.blame.highlight.enabled`、`gitlens.codeLens.enabled` 等
-- 侧边栏和图表功能关闭：`gitlens.graph.sidebar.enabled`、`gitlens.launchpad.indicator.enabled` 等
-- 保留基础功能：`gitlens.ai.model`、`gitlens.ai.vscode.model` 配置用于 AI 功能重新启用时使用
-
-#### 7. 国际化配置（i18n-ally）
-
-- `i18n-ally.disabled`: `true`（默认禁用）
-- `i18n-ally.editor.preferEditor`: `true`
-- `i18n-ally.enabledParsers`: `["json"]`
-- `i18n-ally.extract.autoDetect`: `true`
-- `i18n-ally.keystyle`: `flat`
-- `i18n-ally.namespace`: `true`
-
-#### 8. 窗口配置
-
-- `window.autoDetectColorScheme`: `true`（自动检测系统配色方案）
 
 **说明：** 以上为扩展提供的默认值。如果你在用户设置或工作区设置中显式配置了同名项，将以你的手动配置为准。
 
